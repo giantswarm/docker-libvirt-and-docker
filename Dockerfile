@@ -46,6 +46,8 @@ RUN dnf -y install docker
 # enable docker
 RUN systemctl enable docker
 
+VOLUME /var/lib/docker
+
 ### OTHER REQUIREMENTS ###
 RUN dnf -y install \
         sudo \
@@ -53,6 +55,7 @@ RUN dnf -y install \
         git \
         docker-compose \
         wget
+
 
 # The entrypoint.sh script runs before services start up to ensure that
 # critical directories and permissions are correct.
