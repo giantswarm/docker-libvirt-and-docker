@@ -1,4 +1,4 @@
-FROM fedora:rawhide
+FROM fedora:26
 MAINTAINER Roman Sokolkov <roman@giantswarm.io>
 
 # docker run \
