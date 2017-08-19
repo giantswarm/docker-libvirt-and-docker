@@ -46,6 +46,9 @@ RUN dnf -y install docker
 # enable docker
 RUN systemctl enable docker
 
+# Disable unnecessary docker-storage-setup
+RUN ln -sf /bin/true /usr/bin/container-storage-setup
+
 VOLUME /var/lib/docker
 
 ### OTHER REQUIREMENTS ###
