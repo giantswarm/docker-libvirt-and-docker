@@ -1,4 +1,4 @@
-FROM fedora:26
+FROM fedora:28
 MAINTAINER Roman Sokolkov <roman@giantswarm.io>
 
 # docker run \
