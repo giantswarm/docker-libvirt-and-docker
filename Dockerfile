@@ -1,4 +1,4 @@
-FROM fedora:26
+FROM fedora:30
 MAINTAINER Roman Sokolkov <roman@giantswarm.io>
 
 # docker run \
@@ -30,6 +30,7 @@ RUN dnf -y install \
     qemu-kvm \
     virt-install \
     pygobject3-base \
+    jq \
     && dnf clean all
 
 # Enable libvirtd and virtlockd services.
@@ -57,8 +58,11 @@ RUN dnf -y install \
         which \
         git \
         docker-compose \
+        python3-pip \
         wget
 
+### Latest ansible ###
+RUN pip3 install --upgrade ansible
 
 # The entrypoint.sh script runs before services start up to ensure that
 # critical directories and permissions are correct.
