@@ -59,7 +59,9 @@ RUN dnf -y install \
         git \
         docker-compose \
         python3-pip \
-        wget
+        wget \
+        xfs \
+        xfsprogs
 
 ### Latest ansible ###
 RUN pip3 install --upgrade ansible
