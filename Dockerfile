@@ -1,4 +1,4 @@
-FROM fedora:30
+FROM fedora:32
 MAINTAINER Roman Sokolkov <roman@giantswarm.io>
 
 # docker run \
@@ -29,7 +29,7 @@ RUN dnf -y install \
     qemu \
     qemu-kvm \
     virt-install \
-    pygobject3-base \
+    python3-gobject \
     jq \
     && dnf clean all
 
@@ -70,3 +70,4 @@ COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 CMD ["/sbin/init"]
+
